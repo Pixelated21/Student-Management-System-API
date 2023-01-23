@@ -36,7 +36,7 @@ class CoursesController extends Controller
 
     public function show(CourseRequest $request, Course $course)
     {
-        $course->load('courseType', 'department', 'students', 'assignments');
+        $course->load('courseType', 'department', 'students', 'assignments.assignmentType');
 
         return new CoursesResource($course);
     }

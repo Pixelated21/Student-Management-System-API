@@ -25,6 +25,7 @@ class DepartmentsController extends Controller
 
     public function show(DepartmentRequest $request, Department $department)
     {
+        $department->load('courses');
         // Instantiate a new Department model
         return new DepartmentsResource($department);
     }

@@ -49,10 +49,7 @@ class DepartmentRequest extends FormRequest
 
         if ($currentRouteName === self::ROUTE['store']) {
             return [
-                'name' => ['bail', 'required', 'string', 'max:150', Rule::unique('courses', 'c_name')],
-                'course_type' => ['bail','required', 'uuid', Rule::exists('course_types', 'ct_id')],
-                'department' =>  ['bail','required', 'uuid', Rule::exists('departments', 'dept_id')],
-                'qualifications' => ['required', 'string'],
+                'name' => ['bail', 'required', 'string', 'max:150', Rule::unique('departments', 'd_name')],
             ];
         }
 
@@ -62,10 +59,7 @@ class DepartmentRequest extends FormRequest
 
         if ($currentRouteName === self::ROUTE['update']) {
             return [
-                'name' => ['bail', 'required', 'string', 'max:150', Rule::unique('courses', 'c_name')->ignore($this->course)],
-                'course_type' => ['bail','required', 'uuid', Rule::exists('course_types', 'ct_id')],
-                'department' =>  ['bail','required', 'uuid', Rule::exists('departments', 'dept_id')],
-                'qualifications' => ['required', 'string'],
+                'name' => ['bail', 'required', 'string', 'max:150', Rule::unique('departments', 'd_name')->ignore($this->department)],
             ];
         }
         return [];

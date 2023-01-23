@@ -21,6 +21,9 @@ class DepartmentsResource extends JsonResource
                 'updated_at' => $this->updated_at,
                 'created_at' => $this->created_at,
             ],
+            'relationships' => [
+                'courses' => CoursesResource::collection($this->whenLoaded('courses')),
+            ]
         ];
     }
 }

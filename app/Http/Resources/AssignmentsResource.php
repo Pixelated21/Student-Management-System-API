@@ -23,7 +23,7 @@ class AssignmentsResource extends JsonResource
                 'created_at' => $this->created_at,
             ],
             'relationships' => [
-                'type' => new CoursesResource($this->whenLoaded('assignmentType')),
+                'type' => new AssignmentTypesResource($this->whenLoaded('assignmentType')),
             ]
         ];
     }

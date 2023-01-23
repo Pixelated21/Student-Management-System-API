@@ -17,7 +17,9 @@ class AssignmentTypesResource extends JsonResource
         return [
             'id' => $this->asst_id,
             'attributes' => [
-                'name' => $this->asst_name
+                'name' => $this->asst_name,
+                'created_at' => $this->created_at,
+                'updated_at' => $this->updated_at,
             ]
         ];
     }

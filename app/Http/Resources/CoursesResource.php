@@ -18,12 +18,15 @@ class CoursesResource extends JsonResource
             'id' => $this->c_id,
             'attributes' => [
                 'name' => $this->c_name,
-                'qualifications' => $this->qualifications
+                'qualifications' => $this->qualifications,
+                'created_at' => $this->created_at,
+                'updated_at' => $this->updated_at,
             ],
             'relationships' => [
                 'course_type' => new CourseTypesResource($this->whenLoaded('courseType')),
                 'department' => new DepartmentsResource($this->whenLoaded('department')),
                 'students' =>  StudentsResource::collection($this->whenLoaded('students')),
+                'assignments' => AssignmentsResource::collection($this->whenLoaded('assignments')),
             ]
         ];
     }

@@ -36,15 +36,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Administrator::factory(5)->create();
-        Department::factory(20)->create();
-        AssignmentType::factory(20)->create();
-        CourseType::factory(20)->create();
+        Department::factory(50)->create();
+        AssignmentType::factory(10)->create();
+        CourseType::factory(10)->create();
 
-        Course::factory(200)->create();
+        Course::factory(25)->create();
 
         Student::factory(500)->create();
-        Attendance::factory(1000)->create();
-        Assignment::factory(1000)->create();
+        Attendance::factory(200)->create();
+        Assignment::factory(200)->create();
     }
 }
 
